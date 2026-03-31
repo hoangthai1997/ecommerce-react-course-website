@@ -56,5 +56,10 @@ export default function AuthProvider({ children }) {
 export function useAuth() {
   const context = useContext(AuthContext);
 
-  return context;
+    return <AuthContext.Provider value={{signUp, user, logout, login}}>{children}</AuthContext.Provider>
+}
+
+export function useAuth() {
+    const context = useContext(AuthContext);
+    return context;
 }
